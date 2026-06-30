@@ -1,4 +1,4 @@
-# Parsing XML from a String
+# Parsing XML from a File Object
 
 - Given: an open File object containing [XML][simple_xml.xml].
 - Desired: a [`Nokogiri::XML::Document`][Nokogiri::XML::Document].
@@ -7,8 +7,11 @@
 ```ruby
 # Here's our file.
 file = simple_xml[:file] # => #<File:files/xml/simple.xml>
-# Create string XML.
-xml_string = file.read
+# Read string XML.
+xml_string = nil
+File.open(file.path) do |file|
+  xml_string = file.read
+end
 # Parse.
 doc = Nokogiri::XML(xml_string)
 doc.class     # => Nokogiri::XML::Document

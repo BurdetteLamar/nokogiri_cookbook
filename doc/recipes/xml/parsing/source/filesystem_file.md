@@ -1,4 +1,4 @@
-# Parsing XML from a String
+# Parsing XML from a Filesystem Path
 
 - Given: the path to a file containing [XML][simple_xml.xml].
 - Desired: a [`Nokogiri::XML::Document`][Nokogiri::XML::Document].
