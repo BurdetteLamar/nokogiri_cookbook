@@ -1,14 +1,11 @@
 # Parsing XML from a String
 
-This page uses file
-[simple.xml][simple.xml].
-
-Given: an XML string.
-Desired: a `Nokogiri::XML::Document`.
+- Given: a string containing [XML][simple_xml.xml].
+- Desired: a [`Nokogiri::XML::Document`][Nokogiri::XML::Document].
 
 ```ruby
-require 'nokogiri'
-xml_string = File.read('files/xml/simple.xml')
+# Here's our string.
+xml_string = simple_xml[:string]
 # Parse.
 doc = Nokogiri::XML(xml_string)
 doc.class     # => Nokogiri::XML::Document
@@ -17,5 +14,5 @@ doc.encoding  # => "UTF-8"
 doc.root.name # => "catalog"
 ```
 
-[simple.xml]: rdoc-ref:files/xml/simple.xml
+[simple_xml.xml]:          https://raw.githubusercontent.com/BurdetteLamar/nokogiri_cookbook/refs/heads/main/files/xml/simple_xml.xml
 [Nokogiri::XML::Document]: https://nokogiri.org/rdoc/Nokogiri/XML/Document
